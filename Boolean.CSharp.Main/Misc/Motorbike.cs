@@ -20,15 +20,21 @@ namespace Boolean.CSharp.Main.Misc
             _make = string.Empty;
             _model = string.Empty;
         }
+
+
         public Motorbike(string Make, string Model)
-        {            
+        {
+            _cc = 373;
             _make = Make;
-            _model = Model;         
-            
+            _model = Model;
+
         }
+
         public string Make { get; }
         public string Model { get; }
-        public int CC { get; }
+        public int CC { get { return _cc; } }
+    
+    
 
     }
 }

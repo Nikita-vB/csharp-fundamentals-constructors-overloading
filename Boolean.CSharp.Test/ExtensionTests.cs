@@ -1,10 +1,12 @@
 ﻿using Boolean.CSharp.Main;
+using Boolean.CSharp.Main.Misc;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Boolean.CSharp.Test
 {
@@ -17,14 +19,16 @@ namespace Boolean.CSharp.Test
             _extension = new Extension();
         }
         [Test]
-        private void TestQuestion1()
+        public void TestQuestion1()
         {
-
+            Aeroplane plane = _extension.Question1();
+            Assert.IsTrue(plane.FlightDetails(new AeroplanePassengerManifest()) >1 );
         }
         [Test]
-        private void TestQuestion2()
+        public void TestQuestion2()
         {
-
+            Aeroplane plane = _extension.Question2();
+            Assert.IsTrue(plane.FlightDetails(new AeroplanePassengerManifest(), "Nikita") > 1);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Boolean.CSharp.Main
                 }
             */
             
-            Car car = new Car("Volkswagen");
+            Car car = new Car("Volkswagen", "Beetle");
             /*  When the car in instantiated, the constructor is passed a string
              in this case Volkswagen which is a Make of car is passed in.
              Within the constructor the 'string Make' variable has scope within the constructor and assiged to the _make member now visible to the whole class
@@ -43,7 +43,7 @@ namespace Boolean.CSharp.Main
 
             //TIP if you click on the Car class name above, right click and then select 'Go to Definition' it'll take you straight to the code
 
-           
+
 
 
             return car;
@@ -108,7 +108,7 @@ namespace Boolean.CSharp.Main
             
             //TIP  see we already have an internal member for the unicyclist name:  _nameOfUnicyclist so you can use this to store the name internally
             //      it is good practice to name internal class variable with an _ at the beginning
-            Unicycle unicycle = new Unicycle();
+            Unicycle unicycle = new Unicycle("Nikita");
                       
             
 
@@ -118,26 +118,30 @@ namespace Boolean.CSharp.Main
 
         public Aeroplane Question5()
         {
-            
+
             /*
              
             Method overloading is possible too.
             Examine the Aeroplane class.  
             Consider the following..
-            How many FlightDetails methods are there?
-            What are the return types of each of the FlightDetails methods?
-            What are the parameters and types?
+            How many FlightDetails methods are there? = 4
+            What are the return types of each of the FlightDetails methods? = bool, void, string, int
+            What are the parameters and types? 
+            Parameters: departureAirport, arrivalAirport, cancelledMessage, AeroplanePassengerManifest
+            Types: string, string, string, list
+
             Overloading is simply multiple methods that have the same name but do different things
 
              */
             Aeroplane plane = new Aeroplane();            
             plane.FlightDetails("LHR", "JFK");
-            
+
             //TODO:  5.  Call the FlightDetails method that sets the cancelled message and  cancel the flight
-           
+
             //TIP  as soon as you type plane.FlightDetails(   Visual Studios intellisense will present you with a dialog where you can see how many overloads there are
-            
+
             //write code here and inside the Aeroplane class
+            plane.FlightDetails("The flight is cancelled");
 
             return plane;
         }
